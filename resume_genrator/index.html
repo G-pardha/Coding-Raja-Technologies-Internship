@@ -1,0 +1,163 @@
+<!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Resume Generator</title>
+</head>
+<body>
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Resume Generator</h1>
+        <p class="text-center"><i>By pardha</i></p>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- First Column -->
+                <h3>Personal Information</h3>
+                <!-- Inside the Personal Information section -->
+<div class="form-group mt-4">
+    <label for="surnamefield"><b>Surname</b></label>
+    <input type="text" id="surnamefield" name="surname" placeholder="Enter your Surname" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="firstnamefield"><b>First name</b></label>
+    <input type="text" id="firstnamefield" name="firstname" placeholder="Enter your First name" class="form-control"/>
+</div>
+<div class="form-group">
+    <label for="secondnamefield"><b>SecondName</b></label>
+    <input type="text" id="secondnamefield" name="secondname" placeholder="Enter your Second name" class="form-control"/>
+</div>
+<!-- Add id attribute to the contact field -->
+<div class="form-group mt-3">
+    <label for="contactfield"><b>Contact Number</b></label>
+    <input type="text" id="contactfield" name="contact" placeholder="Enter here" class="form-control"/>
+</div>
+<!-- Add id attribute to the address field -->
+<div class="form-group mt-3">
+    <label for="addressfield"><b>Your Address</b></label>
+    <textarea id="addressfield" name="address" placeholder="Please Enter your address" class="form-control" rows="5"></textarea>
+</div>
+
+                <p class="text-secondary mt-3">Your Social Media links</p>
+                <div class="form-group mt-3">
+                    <label for="metafield"><b>Meta</b></label>
+                    <input type="text" id="metafield" placeholder="Provide your profile link" class="form-control"/>
+                </div>
+                <div class="form-group mt-2">
+                    <label for="instafield"><b>Instagram</b></label>
+                    <input type="text" id="instafield" placeholder="Provide your profile link" class="form-control"/>
+                </div>
+                <div class="form-group mt-2">
+                    <label for="linkedinfield"><b>LinkedIn</b></label>
+                    <input type="text" id="linkedinfield" placeholder="Provide your profile link" class="form-control"/>
+                </div>
+            </div> 
+            <div class="col-md-6">
+                <!-- Second Column -->
+                <h3>Professional Information</h3>
+                <div class="form-group mt-3">
+                    <label for="biofield"><b>Objectives</b></label>
+                    <textarea id="biofield" name="objectives" placeholder="Explain yourself" class="form-control" rows="5"></textarea>
+                </div>
+
+                <!-- Work Experience Section -->
+                <div class="form-group mt-3">
+                    <label for="workExperienceField"><b>Work Experience</b></label>
+                    <textarea placeholder="Previous company you worked" class="form-control weField"></textarea>
+                    <div class="container text-center mt-2" id="weAddButton">
+                        <button onclick="addNewWEField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+                <!-- Academics Qualifications Section -->
+                <div class="form-group mt-3">
+                    <label for="academicsQualificationsField"><b>Academics Qualifications</b></label>
+                    <textarea placeholder="Enter your academics qualification" class="form-control aqField"></textarea>
+                    <div class="container text-center mt-2" id="aqAddButton">
+                        <button onclick="addNewAQField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center mt-3">
+            <button onclick="generatecv()" class="btn btn-primary btn-lg">Generate CV</button>
+        </div>
+    </div>
+
+    <!-- cv templet -->
+
+            <div class="container" id="cv-template">
+                <div class="row">
+                    <div class="col-md-4 text-center py-5 background">
+                        <!-- first column -->
+                        <img src="https://t4.ftcdn.net/jpg/04/43/94/65/360_F_443946521_H2fUJJyxk2YuqwQP1dUvg0JavzhanSOV.jpg" 
+                        alt=""
+                        class="img-fluid myimg">
+                        <div class="container">
+                            <p id="nameT">gudimetta pardha sarathi</p>
+                            <p id="contactT">+91 9133886194,+91 9289849983</p>
+                            <p id="addressT">4-2432-52-5,dfsdgds,gjgbe,bangalore</p>
+                            <hr />
+            
+                            <p><a id="fbT" href="#1">https://www.facebook.com/profile.php?id=100020740401058</a></p>
+                            <p><a id="instaT" href="#2">https://www.instagram.com/_.pardha._/</a></p>
+                            <p><a id="linkedT" href="#3">https://www.linkedin.com/in/g-pardha-486a6a270/</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-8 py-5">
+                        <!-- second column -->
+                        <h1 id="nameT2"class="text-center" style="font-weight: 980">G Pardha Sarathi</h1>
+                        <!-- objective templet -->
+                        <div class="card mt-4">
+                            <div class="card-header background">
+                            <h3>BIO</h3>
+                            </div>
+                            <div id="bioT" class="card-body">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aut commodi 
+                                    soluta sam ratione itaque atque totam, pariatur quos, excepturi vel minima
+                                    praesentium reprehenderit nobis error perspiciatis deleniti odio repellat.
+                                    Totam sequi quia aspernatur nihil reprehenderit? Ipsa enim ad, aliquam amet
+                                    accusamus ea rerum fuga non reprehenderit tenetur sunt ullam?
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- work experience -->
+                        <div class="card mt-4">
+                            <div class="card-header background">
+                            <h3>Work Experience</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul id="weT">
+                                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, id!</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- academics qualification -->
+
+                       
+                        <div class="card mt-4">
+                            <div class="card-header background">
+                            <h3>Academics Qualification</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul id="aqT">
+                                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, id!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    <div class="container mt-3 text-center">
+                        <button onclick="printcv()" class="btn background">
+                            Print cv
+                        </button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
